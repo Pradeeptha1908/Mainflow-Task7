@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product & Buyer Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Product & Buyer Management</h1>
+
+    <div class="form-container">
+        <h2>Add Product</h2>
+        <form id="product-form">
+            <label for="product-name">Product Name:</label>
+            <input type="text" id="product-name" required>
+
+            <label for="product-price">Product Price:</label>
+            <input type="number" id="product-price" required>
+
+            <button type="submit">Add Product</button>
+        </form>
+
+        <h2>Add Buyer</h2>
+        <form id="buyer-form">
+            <label for="buyer-name">Buyer Name:</label>
+            <input type="text" id="buyer-name" required>
+
+            <label for="buyer-contact">Buyer Contact:</label>
+            <input type="text" id="buyer-contact" required>
+
+            <label for="buyer-email">Buyer Email:</label>
+            <input type="email" id="buyer-email" required>
+
+            <label for="buyer-address">Buyer Address:</label>
+            <input type="text" id="buyer-address" required>
+
+            <button type="submit">Add Buyer</button>
+        </form>
+    </div>
+
+    <div class="search-container">
+        <h2>Search Products/Buyers</h2>
+        <label for="search-input">Search:</label>
+        <input type="text" id="search-input" oninput="searchItems()" placeholder="Search by name...">
+
+        <h3>Search Results:</h3>
+        <ul id="search-results"></ul>
+    </div>
+
+    <h2>Products</h2>
+    <ul id="product-list"></ul>
+
+    <h2>Buyers</h2>
+    <ul id="buyer-list"></ul>
+
+    <div class="bill-container">
+        <h2>Generate Bill</h2>
+
+        <label for="buyer-select">Select Buyer:</label>
+        <select id="buyer-select"></select>
+
+        <label for="product-select">Select Products:</label>
+        <div id="product-select-list"></div>
+
+        <label for="payment-method">Payment Method:</label>
+        <select id="payment-method">
+            <option value="Cash">Cash</option>
+            <option value="Card">Card</option>
+            <option value="UPI">UPI</option>
+            <option value="Bank Transfer">Bank Transfer</option>
+        </select>
+
+        <button onclick="generateBill()">Generate Bill</button>
+
+        <div id="bill-output"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
